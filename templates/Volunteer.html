@@ -1,0 +1,81 @@
+{% extends 'bootstrap/base.html' %}
+<!DOCTYPE html>
+<html class="no-js" lang="ru-RU">
+<head>
+    {% block metas %}
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    {% endblock %}
+
+    {% if title %}
+    <title>Volunteer</title>
+    {% endif %}
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+  <body>
+  {% block content %}
+      {% if header %}
+        <header class="block page-header white ontop">
+          <div class="content"><a class="logo-link" href="Volunteer.html"></a>
+            <ul class="main-menu ru-menu">
+              <li class="main-menu-item nm"><a class="main-menu-link w-arrow" id="services-link" href="#">Услуги</a>
+                <ul class="submenu-popup" id="serv-popup">
+                  <li><a href="" target="_blank">#####</a></li>
+                  <li><a href="" target="_blank">#####</a></li>
+                  <li><a href="">#######</a></li>
+                  <li><a href="">######</a></li>
+                </ul>
+              </li>
+              <li class="main-menu-item"><a class="main-menu-link" href="contacts.html">Контакты</a></li>
+            </ul>
+          </div>
+        </header>
+      {% endif %}
+
+    {% block app_content %}
+    <div class="block school-plate-block mobdev-school-plate white">
+      <div class="content">
+          {% pic %}
+        <img class="ab-pic" src="files/bchb.jpg">
+        <div class="school-infoplate">
+          <h2 class="common-title">Испытываете проблемы с <br>переходом на цифровой <br>формат вещания?</h2>
+          <p class="bigger-text"></p>
+          <p class="blog-plate-text listy"><span>Вам готовы помочь волонтёры с установкой и</span><br><span>настройкой оборудования, необходимого для<br>приёма цифрового сигнала</span><br><br><span>Достаточно лишь оставить заявку</span></p>
+          <a class="blue-btn" href="#request">Оставить заявку</a>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    <div class="block form-block" id="request">
+      <div class="content">
+      <div class="form-part">
+        <h1 class="huge-title">Хочу настроить оборудование для цифрового ТВ</h1>
+        <form method="post" enctype="multipart/form-data" action="{{ url_for('upload') }}">
+          <input type="text" name="phone"  required="" placeholder="Ваш номер телефона" maxlength="17">
+          <input type="text" name="name" required="" placeholder="Как вас зовут?">
+          <input type="text" name="address" required="" placeholder="Ваш адрес"><br>
+          <p class="terms">Нажимая кнопку ниже, я&nbsp;соглашаюсь<br><a href="">с&nbsp;условиями пользовательского соглашения</a></p>
+          <input class="blue-btn" type="submit" value="Отправить данные">
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="footer-grid-part"> </div>
+  
+  <style>
+    
+.form-block .blue-btn {
+  margin-bottom: 35px;
+    margin-top: 0px;
+}
+
+  </style>
+    <script src="files/main.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+{% endblock %}
+</body>
+</html>

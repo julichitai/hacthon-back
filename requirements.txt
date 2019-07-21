@@ -1,0 +1,5 @@
+peewee
+requests
+flask
+flask_bootstrap
+pandas
